@@ -2,7 +2,7 @@
 
 <h1><?php echo $title ?></h1>
 
-<?php echo get_uhp_pager_navigation($pager, 'io_blog_index') ?>
+<?php include_partial('ioBlog/pagerNavigation', array('pager' => $pager)) ?>
 
 <?php if ($pager->getNbResults() > 0): ?>
 
@@ -19,4 +19,4 @@
   <?php endif; ?>
 <?php endif; ?>
 
-<?php echo get_io_pager_navigation($pager, 'io_blog_index') ?>
+<?php include_partial('ioBlog/pagerNavigation', array('pager' => $pager)) ?>

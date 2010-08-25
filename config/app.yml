@@ -4,3 +4,6 @@ all:
       display:
         "Basic":    [title, slug]
         "Meta":     [tags, meta_keywords, meta_description]
+
+  io_blog:
+    web_dir:   '/ioBlogPlugin',
