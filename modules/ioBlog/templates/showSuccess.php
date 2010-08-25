@@ -7,7 +7,3 @@
 
 <?php include_component('comment', 'formComment', array('object' => $blog)) ?>
 <?php include_component('comment', 'list', array('object' => $blog, 'i' => 0)) ?>
-
-<?php slot('sidebar') ?>
-  <?php include_partial('ioBlog/blogSidebar', array('blog' => $blog)) ?>
-<?php end_slot() ?>
