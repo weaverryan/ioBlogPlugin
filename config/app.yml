@@ -1,0 +1,6 @@
+all:
+  io_page:
+    ioBlog:
+      display:
+        "Basic":    [title, slug]
+        "Meta":     [tags, meta_keywords, meta_description]

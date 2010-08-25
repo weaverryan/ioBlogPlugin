@@ -1,0 +1,17 @@
+.blog_preview {
+  border-bottom: 1px solid #333;
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+.blog_preview h3 {
+  margin-bottom: 0;
+}
+.blog_preview h4 {
+  font-size: 13px;
+  margin: 0 0 5px 0;
+}
+.blog_preview a.read_more {
+  display: block;
+  float: right;
+  width: 100px;
+}

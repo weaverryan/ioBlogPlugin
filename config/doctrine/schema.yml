@@ -1,0 +1,17 @@
+ioBlog:
+  columns:
+    author_id: integer
+  inheritance:
+    extends:   ioPage
+    type:      column_aggregation
+    keyField:  type
+    keyValue:  blog
+  actAs:
+    Commentable:
+    Taggable:
+  relations:
+    Author:
+      local:   author_id
+      class:   sfGuardUser
+      foreignAlias: Blogs
+      onDelete: set null

@@ -1,0 +1,10 @@
+.author_bio {
+  border: 1px solid #666;
+  border-left: none;
+  border-right: none;
+  padding: 10px;
+}
+.author_bio img {
+  float: left;
+  margin-right: 5px;
+}

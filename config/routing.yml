@@ -1,0 +1,42 @@
+io_blog_index:
+  url:   /blog.:sf_format
+  class: sfRequestRoute
+  param:
+    module:    ioBlog
+    action:    index
+    sf_format: html
+  requirements:
+    sf_format: (?:html|rss)
+    sf_method: [get]
+io_blog_index_tag:
+  url:   /blog/tag/:tag.:sf_format
+  class: sfRequestRoute
+  param:
+    module:    ioBlog
+    action:    index
+    sf_format: html
+  requirements:
+    sf_format: (?:html|rss)
+    sf_method: [get]
+io_blog_index_author:
+  url:   /blog/author/:author.:sf_format
+  class: sfRequestRoute
+  param:
+    module:    ioBlog
+    action:    index
+    sf_format: html
+  requirements:
+    sf_format: (?:html|rss)
+    sf_method: [get]
+
+io_blog_show:
+  url:   /blog/:slug
+  class: sfDoctrineRoute
+  param:
+    module:   ioBlog
+    action:   show
+  options:
+    model:    ioBlog
+    type:     object
+  requirements:
+    sf_method: [get,post]

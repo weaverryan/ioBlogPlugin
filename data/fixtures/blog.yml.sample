@@ -1,0 +1,6 @@
+ioBlog:
+  test_blog1:
+    title:   A test blog entry
+    body:    Lorem ipsum dolor
+    Author:  User_admin
+    published_at: '2010-06-50 12:00:00'
