@@ -1,6 +1,7 @@
 ioBlog:
   columns:
     author_id: integer
+    teaser:    clob
   inheritance:
     extends:   ioPage
     type:      column_aggregation
