@@ -14,8 +14,13 @@ abstract class PluginioBlog extends BaseioBlog
 {
   public function getPreview()
   {
+    if ($this['teaser'])
+    {
+      return $this['teaser'];
+    }
+
     sfApplicationConfiguration::getActive()->loadHelpers('Text');
 
-    return truncate_text(strip_tags($this->body));
+    return truncate_text(strip_tags($this['body']));
   }
 }
