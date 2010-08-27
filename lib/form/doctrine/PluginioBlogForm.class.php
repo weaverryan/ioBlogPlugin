@@ -20,12 +20,18 @@ abstract class PluginioBlogForm extends BaseioBlogForm
       'body',
       'meta_keywords',
       'meta_description',
+      'author_id',
+      'published_at',
     ));
 
-    $this->widgetSchema['body'] = new ioWidgetFormCKEditor();
+    $this->widgetSchema['author_id'] = new sfWidgetFormDoctrineChoice(array(
+      'model' => 'sfGuardUser',
+      'add_empty' => true,
+    ));
+    $this->validatorSchema['author_id'] = new sfValidatorDoctrineChoice(array(
+      'model' => 'sfGuardUser',
+    ));
 
     $this->addTagsField();
-
-
   }
 }
