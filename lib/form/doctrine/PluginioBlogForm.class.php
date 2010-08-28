@@ -22,6 +22,7 @@ abstract class PluginioBlogForm extends BaseioBlogForm
       'meta_description',
       'author_id',
       'published_at',
+      'teaser',
     ));
 
     $this->widgetSchema['author_id'] = new sfWidgetFormDoctrineChoice(array(
