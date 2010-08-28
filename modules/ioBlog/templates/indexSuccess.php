@@ -11,7 +11,7 @@
     $pager->getResults(),
     array('with_delete' => true, 'with_new' => true),
     'div',
-    array('title', 'author_id', 'published_at'),
+    array('title', 'author_id'),
     array('partial' => 'ioBlog/blogPreview', 'class' => 'blog_preview')
   ) ?>
   

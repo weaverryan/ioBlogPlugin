@@ -2,7 +2,7 @@ all:
   io_page:
     ioBlog:
       display:
-        "Basic":    [title, slug]
+        "Basic":    [title, slug, published_at]
         "Meta":     [tags, meta_keywords, meta_description]
 
   io_blog:
