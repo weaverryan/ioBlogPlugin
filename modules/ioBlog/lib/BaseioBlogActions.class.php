@@ -14,7 +14,15 @@ class BaseioBlogActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $tbl = Doctrine_Core::getTable('ioBlog');
-    $q = $tbl->addIsPublishedQuery();
+
+    if (!$this->userCanEditPages())
+    {
+      $q = $tbl->addIsPublishedQuery();
+    }
+    else
+    {
+      $q = $tbl->createQuery('p');
+    }
     $q = $tbl->addRecentOrderBy($q);
 
     // process a tag parameter if present
