@@ -29,9 +29,6 @@ abstract class PluginioBlogForm extends BaseioBlogForm
       'model' => 'sfGuardUser',
       'add_empty' => true,
     ));
-    $this->validatorSchema['author_id'] = new sfValidatorDoctrineChoice(array(
-      'model' => 'sfGuardUser',
-    ));
 
     $this->addTagsField();
   }

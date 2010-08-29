@@ -1,6 +1,8 @@
 ioBlog:
   columns:
-    author_id: integer
+    author_id:
+      type:    integer
+      notnull: false
     teaser:    clob
   inheritance:
     extends:   ioPage
