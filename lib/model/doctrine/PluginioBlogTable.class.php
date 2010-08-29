@@ -20,4 +20,19 @@ class PluginioBlogTable extends ioPageTable
 
     return $q->andWhere('p.author_id = ?', $user->id);
   }
+
+  /**
+   * Returns an array (tag => count) of the most popular tags and the
+   * number of posts under that tag
+   *
+   * @param  integer$num The max number of tags to retrieve
+   * @return array
+   */
+  public function getPopularTags($num)
+  {
+    return TagTable::getAllTagNameWithCount(null, array(
+      'model' => 'ioBlog',
+      'limit' => $num,
+    ));
+  }
 }
