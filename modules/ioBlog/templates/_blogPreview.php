@@ -1,7 +1,7 @@
 <h3>
   <a href="<?php echo url_for('io_blog_show', $io_blog) ?>"><?php echo $io_blog->title ?></a>
 </h3>
-<h4><?php echo $io_blog->Author->getName() ?></h4>
+<h4 style="font-style: italic;">by <?php echo $io_blog->getAuthorName() ?></h4>
 
 <?php echo $io_blog->getPreview() ?>
 

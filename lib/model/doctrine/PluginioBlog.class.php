@@ -23,4 +23,16 @@ abstract class PluginioBlog extends BaseioBlog
 
     return truncate_text(strip_tags($this['body']));
   }
+
+  /**
+   * Used as the string representation of the Author.
+   *
+   * Can be overridden to display something different for the author 
+   *
+   * @return string
+   */
+  public function getAuthorName()
+  {
+    return (string) $this->Author;
+  }
 }
