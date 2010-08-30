@@ -15,3 +15,7 @@
   float: right;
   width: 100px;
 }
+.byline {
+  font-style: italic;
+  font-weight: bold;
+}
