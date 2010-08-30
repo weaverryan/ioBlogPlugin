@@ -35,4 +35,18 @@ class PluginioBlogTable extends ioPageTable
       'limit' => $num,
     ));
   }
+
+  /**
+   * Returns a collection of the sfGuardUser author objects
+   *
+   * @return Doctrine_Collection
+   */
+  public function getAuthors()
+  {
+    return Doctrine_Core::getTable('sfGuardUser')
+      ->createQuery('u')
+      ->select('u.*')
+      ->innerJoin('u.Blogs b')
+      ->execute();
+  }
 }
