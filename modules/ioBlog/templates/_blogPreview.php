@@ -1,7 +1,10 @@
+<?php use_stylesheet('/ioBlogPlugin/css/blog.css') ?>
+
 <h3>
   <a href="<?php echo url_for('io_blog_show', $io_blog) ?>"><?php echo $io_blog->title ?></a>
 </h3>
-<h4 style="font-style: italic;">by <?php echo $io_blog->getAuthorName() ?></h4>
+
+<?php include_partial('ioBlog/byline', array('io_blog' => $io_blog)) ?>
 
 <?php echo $io_blog->getPreview() ?>
 
