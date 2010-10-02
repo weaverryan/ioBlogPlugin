@@ -63,6 +63,6 @@ class BaseioBlogActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
     $this->blog = $this->getRoute()->getObject();
-    $this->getContentLoader($this->blog)->load();
+    $this->getContentLoader($this->blog, $this)->load();
   }
 }
