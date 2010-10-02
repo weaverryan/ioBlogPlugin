@@ -40,7 +40,7 @@ class BaseioBlogActions extends sfActions
     {
       $user = Doctrine_Core::getTable('sfGuardUser')->findOneByUsername($author);
       $this->forward404Unless($user);
-      $q = $tbl->addAuthorQuery($user);
+      $q = $tbl->addAuthorQuery($user, $q);
 
       $this->title = sprintf('Blog entries by %s', $author);
     }
