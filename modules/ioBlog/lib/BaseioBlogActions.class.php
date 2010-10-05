@@ -62,21 +62,15 @@ class BaseioBlogActions extends sfActions
         $request->getParameter('tag'),
         $q
       );
-
-      $this->title = sprintf('Blog entries for "%s"', $request->getParameter('tag'));
     }
     elseif ($author = $request->getParameter('author'))
     {
       $user = Doctrine_Core::getTable('sfGuardUser')->findOneByUsername($author);
       $this->forward404Unless($user);
       $q = $tbl->addAuthorQuery($user, $q);
+    }
 
-      $this->title = sprintf('Blog entries by %s', $author);
-    }
-    else
-    {
-      $this->title = 'Recent blog entries';
-    }
+    $q = $tbl->addAuthorJoinQuery($q);
 
     return $q;
   }
