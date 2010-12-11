@@ -54,20 +54,29 @@ class BaseioBlogActions extends sfActions
     }
     $q = $tbl->addRecentOrderBy($q);
 
+    $this->filterQueryParams = array();
+    $this->pagerRoute = 'io_blog_index';
+
     // process a tag parameter if present
-    if ($request->getParameter('tag'))
+    if ($tag = $request->getParameter('tag'))
     {
       Doctrine_Core::getTable('Tag')->getObjectTaggedWithQuery(
         'ioBlog',
-        $request->getParameter('tag'),
+        $tag,
         $q
       );
+
+      $this->filterQueryParams['tag'] = $tag;
+      $this->pagerRoute = 'io_blog_index_tag';
     }
     elseif ($author = $request->getParameter('author'))
     {
       $user = Doctrine_Core::getTable('sfGuardUser')->findOneByUsername($author);
       $this->forward404Unless($user);
       $q = $tbl->addAuthorQuery($user, $q);
+
+      $this->filterQueryParams['author'] = $author;
+      $this->pagerRoute = 'io_blog_index_author';
     }
 
     $q = $tbl->addAuthorJoinQuery($q);

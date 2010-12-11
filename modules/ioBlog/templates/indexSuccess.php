@@ -2,7 +2,11 @@
 
 <h1><?php echo $title ?></h1>
 
-<?php include_partial('ioBlog/pagerNavigation', array('pager' => $pager)) ?>
+<?php include_partial('ioBlog/pagerNavigation', array(
+  'pager'   => $pager,
+  'route'   => $pagerRoute,
+  'params'  => $filterQueryParams,
+)) ?>
 
 <?php if ($pager->getNbResults() > 0): ?>
 
@@ -23,4 +27,8 @@
   <?php endif; ?>
 <?php endif; ?>
 
-<?php include_partial('ioBlog/pagerNavigation', array('pager' => $pager)) ?>
+<?php include_partial('ioBlog/pagerNavigation', array(
+  'pager'   => $pager,
+  'route'   => $pagerRoute,
+  'params'  => $filterQueryParams,
+)) ?>
