@@ -47,6 +47,7 @@ class PluginioBlogTable extends ioPageTable
       ->createQuery('u')
       ->select('u.*')
       ->innerJoin('u.Blogs b')
+      ->orderBy('u.first_name ASC') // sort them alphabetically by first name
       ->execute();
   }
 }
