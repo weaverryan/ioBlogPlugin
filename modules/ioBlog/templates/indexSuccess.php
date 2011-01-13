@@ -1,5 +1,6 @@
 <?php use_stylesheet('/ioBlogPlugin/css/blog.css') ?>
 
+<?php slot('title', $title) ?>
 <h1><?php echo $title ?></h1>
 
 <?php include_partial('ioBlog/pagerNavigation', array(

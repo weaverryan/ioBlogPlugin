@@ -7,3 +7,5 @@ all:
 
   io_blog:
     web_dir:   '/ioBlogPlugin',
+
+    index_title:    'Recent Blog Entries'

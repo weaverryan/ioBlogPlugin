@@ -103,6 +103,6 @@ class BaseioBlogActions extends sfActions
       return sprintf('Blog entries by %s', $author);
     }
 
-    return 'Recent blog entries';
+    return sfConfig::get('app_io_blog_index_title', 'Recent Blog Entries');
   }
 }
