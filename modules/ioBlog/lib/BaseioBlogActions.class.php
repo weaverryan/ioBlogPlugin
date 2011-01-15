@@ -16,7 +16,7 @@ class BaseioBlogActions extends sfActions
     $q = $this->setupQueryFromRequest($request);
     $this->title = $this->getTitleFromRequest($request);
 
-    $this->pager = new sfDoctrinePager('ioBlog', 10);
+    $this->pager = new sfDoctrinePager('ioBlog', sfConfig::get('app_io_blog_per_page', 10));
     $this->pager->setQuery($q);
     $this->pager->setPage($request->getParameter('page', 1));
     $this->pager->init();
