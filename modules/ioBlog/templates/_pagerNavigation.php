@@ -17,6 +17,6 @@
 
     <a href="<?php echo url_for($route, array_merge($params, array('page' => $pager->getNextPage()))) ?>"><?php echo image_tag($webRoot.'/images/pager/next.png', array('alt' => 'Next page')) ?></a>
 
-    <a href="<?php echo url_for($route, array_merge($filterQueryParams, array('page' => $pager->getLastPage()))) ?>"><?php echo image_tag($webRoot.'/images/pager/last.png', array('alt' => 'Last page')) ?></a>
+    <a href="<?php echo url_for($route, array_merge($params, array('page' => $pager->getLastPage()))) ?>"><?php echo image_tag($webRoot.'/images/pager/last.png', array('alt' => 'Last page')) ?></a>
   </div>
 <?php endif; ?>
